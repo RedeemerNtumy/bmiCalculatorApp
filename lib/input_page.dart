@@ -26,27 +26,17 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: BmiCard(
-                    cardChild: Column(
-                      children: [
-                        Icon(
-                          FontAwesomeIcons.mars,
-                          size: 80,
-                        ),
-                        SizedBox(
-                          height: 15,
-                        ),
-                        Text(
-                          "MALE",
-                          style: TextStyle(color: Colors.white,
-                          fontSize: 20),
-                        )
-                      ],
+                    cardChild: Gender(
+                      gender: FontAwesomeIcons.mars,
+                      genderText: "MALE",
                     ),
                     nativeColor: reusableCardNativeColor,
                   ),
                 ),
                 Expanded(
                   child: BmiCard(
+                    cardChild: Gender(
+                        gender: FontAwesomeIcons.venus, genderText: "FEMALE"),
                     nativeColor: reusableCardNativeColor,
                   ),
                 ),
@@ -82,6 +72,32 @@ class _InputPageState extends State<InputPage> {
           )
         ],
       ),
+    );
+  }
+}
+
+class Gender extends StatelessWidget {
+  Gender({required this.gender, required this.genderText});
+  final IconData gender;
+  final String genderText;
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          gender,
+          size: 80,
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        Text(
+          genderText,
+          style: TextStyle(
+              color: Colors.white60, fontSize: 20, fontWeight: FontWeight.bold),
+        )
+      ],
     );
   }
 }
