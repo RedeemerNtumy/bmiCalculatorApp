@@ -34,33 +34,33 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
+                  child: BmiCard(
+                    gesture: () {
                       setState(() {
-                        selectedGender = GenderType.male;
+                        selectedGender=GenderType.male;
                       });
                     },
-                    child: BmiCard(
-                      cardChild: Gender(
-                        gender: FontAwesomeIcons.mars,
-                        genderText: "MALE",
-                      ),
-                      nativeColor: selectedGender==GenderType.male? activeReusableCardnativeColor:inactiveReusableCardNativeColor,
+                    cardChild: Gender(
+                      gender: FontAwesomeIcons.mars,
+                      genderText: "MALE",
                     ),
+                    nativeColor: selectedGender == GenderType.male
+                        ? activeReusableCardnativeColor
+                        : inactiveReusableCardNativeColor,
                   ),
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
+                  child: BmiCard(
+                    gesture: () {
                       setState(() {
-                        selectedGender = GenderType.female;
+                        selectedGender=GenderType.female;
                       });
                     },
-                    child: BmiCard(
-                      cardChild: Gender(
-                          gender: FontAwesomeIcons.venus, genderText: "FEMALE"),
-                      nativeColor: selectedGender==GenderType.female? activeReusableCardnativeColor:inactiveReusableCardNativeColor,
-                    ),
+                    cardChild: Gender(
+                        gender: FontAwesomeIcons.venus, genderText: "FEMALE"),
+                    nativeColor: selectedGender == GenderType.female
+                        ? activeReusableCardnativeColor
+                        : inactiveReusableCardNativeColor,
                   ),
                 ),
               ],
