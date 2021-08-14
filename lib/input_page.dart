@@ -4,7 +4,8 @@ import 'bmiCard.dart';
 import 'Gender.dart';
 
 const bottomContainerHeight = 80.0;
-const reusableCardNativeColor = Colors.blue;
+const inactiveReusableCardNativeColor = Color(0xff1565C0);
+const activeReusableCardnativeColor = Colors.blue;
 const bottomContainerColor = Color(0xffEB1555);
 
 class InputPage extends StatefulWidget {
@@ -13,6 +14,27 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  Color maleCardColor = inactiveReusableCardNativeColor;
+  Color femaleCardColor = inactiveReusableCardNativeColor;
+
+  void updateColor(int gender) {
+    if (gender == 1) {
+      if (maleCardColor == inactiveReusableCardNativeColor) {
+        maleCardColor = activeReusableCardnativeColor;
+        femaleCardColor = inactiveReusableCardNativeColor;
+      } else {
+        maleCardColor = inactiveReusableCardNativeColor;
+      }
+    } else {
+      if (femaleCardColor == inactiveReusableCardNativeColor) {
+        femaleCardColor = activeReusableCardnativeColor;
+        maleCardColor = inactiveReusableCardNativeColor;
+      } else {
+        femaleCardColor = inactiveReusableCardNativeColor;
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,19 +49,33 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: BmiCard(
-                    cardChild: Gender(
-                      gender: FontAwesomeIcons.mars,
-                      genderText: "MALE",
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        updateColor(1);
+                      });
+                    },
+                    child: BmiCard(
+                      cardChild: Gender(
+                        gender: FontAwesomeIcons.mars,
+                        genderText: "MALE",
+                      ),
+                      nativeColor: maleCardColor,
                     ),
-                    nativeColor: reusableCardNativeColor,
                   ),
                 ),
                 Expanded(
-                  child: BmiCard(
-                    cardChild: Gender(
-                        gender: FontAwesomeIcons.venus, genderText: "FEMALE"),
-                    nativeColor: reusableCardNativeColor,
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        updateColor(2);
+                      });
+                    },
+                    child: BmiCard(
+                      cardChild: Gender(
+                          gender: FontAwesomeIcons.venus, genderText: "FEMALE"),
+                      nativeColor: femaleCardColor,
+                    ),
                   ),
                 ),
               ],
@@ -47,7 +83,7 @@ class _InputPageState extends State<InputPage> {
           ),
           Expanded(
             child: BmiCard(
-              nativeColor: reusableCardNativeColor,
+              nativeColor: inactiveReusableCardNativeColor,
             ),
           ),
           Expanded(
@@ -55,12 +91,12 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: BmiCard(
-                    nativeColor: reusableCardNativeColor,
+                    nativeColor: inactiveReusableCardNativeColor,
                   ),
                 ),
                 Expanded(
                   child: BmiCard(
-                    nativeColor: reusableCardNativeColor,
+                    nativeColor: inactiveReusableCardNativeColor,
                   ),
                 ),
               ],
