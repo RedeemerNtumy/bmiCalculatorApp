@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+const bottomContainerHeight = 80.0;
+const reusableCardNativeColor = Colors.blue;
+const bottomContainerColor = Color(0xffEB1555);
+
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
@@ -21,12 +25,12 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: BmiCard(
-                    nativeColor: Colors.blue,
+                    nativeColor: reusableCardNativeColor,
                   ),
                 ),
                 Expanded(
                   child: BmiCard(
-                    nativeColor: Colors.blue,
+                    nativeColor: reusableCardNativeColor,
                   ),
                 ),
               ],
@@ -34,30 +38,36 @@ class _InputPageState extends State<InputPage> {
           ),
           Expanded(
             child: BmiCard(
-              nativeColor: Colors.blue,
+              nativeColor: reusableCardNativeColor,
             ),
           ),
           Expanded(
-              child: Row(
-            children: [
-              Expanded(
-                child: BmiCard(
-                  nativeColor: Colors.blue,
+            child: Row(
+              children: [
+                Expanded(
+                  child: BmiCard(
+                    nativeColor: reusableCardNativeColor,
+                  ),
                 ),
-              ),
-              Expanded(
-                child: BmiCard(
-                  nativeColor: Colors.blue,
+                Expanded(
+                  child: BmiCard(
+                    nativeColor: reusableCardNativeColor,
+                  ),
                 ),
-              ),
-            ],
-          ))
+              ],
+            ),
+          ),
+          Container(
+            color: bottomContainerColor,
+            margin: EdgeInsets.only(top: 10),
+            width: double.infinity,
+            height: bottomContainerHeight,
+          )
         ],
       ),
     );
   }
 }
-
 
 class BmiCard extends StatelessWidget {
   BmiCard({required this.nativeColor});
