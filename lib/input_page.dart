@@ -6,26 +6,6 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Expanded interface() {
-    return Expanded(
-      child: Container(
-        margin: EdgeInsets.all(15),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: Colors.blue,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.white.withOpacity(0.5),
-              spreadRadius: 3,
-              blurRadius: 2,
-              offset: Offset(0, 0),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,14 +19,54 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: Row(
               children: [
-                interface(),
-                interface(),
+                Expanded(
+                  child: BmiCard(),
+                ),
+                Expanded(
+                  child: BmiCard(),
+                ),
               ],
             ),
           ),
-          interface(),
-          interface(),
-          interface(),
+          Expanded(
+            child: BmiCard(),
+          ),
+          Expanded(
+              child: Row(
+            children: [
+              Expanded(
+                child: BmiCard(),
+              ),
+              Expanded(
+                child: BmiCard(),
+              ),
+            ],
+          ))
+        ],
+      ),
+    );
+  }
+}
+
+class BmiCard extends StatelessWidget {
+  const BmiCard({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(15),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: Colors.blue,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.white.withOpacity(0.5),
+            spreadRadius: 3,
+            blurRadius: 2,
+            offset: Offset(0, 0),
+          )
         ],
       ),
     );
