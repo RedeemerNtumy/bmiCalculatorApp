@@ -8,33 +8,18 @@ const inactiveReusableCardNativeColor = Color(0xff1565C0);
 const activeReusableCardnativeColor = Colors.blue;
 const bottomContainerColor = Color(0xffEB1555);
 
+enum GenderType {
+  male,
+  female,
+}
+
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
 }
 
 class _InputPageState extends State<InputPage> {
-  Color maleCardColor = inactiveReusableCardNativeColor;
-  Color femaleCardColor = inactiveReusableCardNativeColor;
-
-  void updateColor(int gender) {
-    if (gender == 1) {
-      if (maleCardColor == inactiveReusableCardNativeColor) {
-        maleCardColor = activeReusableCardnativeColor;
-        femaleCardColor = inactiveReusableCardNativeColor;
-      } else {
-        maleCardColor = inactiveReusableCardNativeColor;
-      }
-    } else {
-      if (femaleCardColor == inactiveReusableCardNativeColor) {
-        femaleCardColor = activeReusableCardnativeColor;
-        maleCardColor = inactiveReusableCardNativeColor;
-      } else {
-        femaleCardColor = inactiveReusableCardNativeColor;
-      }
-    }
-  }
-
+  GenderType? selectedGender;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +37,7 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        updateColor(1);
+                        selectedGender = GenderType.male;
                       });
                     },
                     child: BmiCard(
@@ -60,7 +45,7 @@ class _InputPageState extends State<InputPage> {
                         gender: FontAwesomeIcons.mars,
                         genderText: "MALE",
                       ),
-                      nativeColor: maleCardColor,
+                      nativeColor: selectedGender==GenderType.male? activeReusableCardnativeColor:inactiveReusableCardNativeColor,
                     ),
                   ),
                 ),
@@ -68,13 +53,13 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        updateColor(2);
+                        selectedGender = GenderType.female;
                       });
                     },
                     child: BmiCard(
                       cardChild: Gender(
                           gender: FontAwesomeIcons.venus, genderText: "FEMALE"),
-                      nativeColor: femaleCardColor,
+                      nativeColor: selectedGender==GenderType.female? activeReusableCardnativeColor:inactiveReusableCardNativeColor,
                     ),
                   ),
                 ),
