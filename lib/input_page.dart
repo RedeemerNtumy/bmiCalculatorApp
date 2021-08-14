@@ -20,25 +20,35 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: BmiCard(),
+                  child: BmiCard(
+                    nativeColor: Colors.blue,
+                  ),
                 ),
                 Expanded(
-                  child: BmiCard(),
+                  child: BmiCard(
+                    nativeColor: Colors.blue,
+                  ),
                 ),
               ],
             ),
           ),
           Expanded(
-            child: BmiCard(),
+            child: BmiCard(
+              nativeColor: Colors.blue,
+            ),
           ),
           Expanded(
               child: Row(
             children: [
               Expanded(
-                child: BmiCard(),
+                child: BmiCard(
+                  nativeColor: Colors.blue,
+                ),
               ),
               Expanded(
-                child: BmiCard(),
+                child: BmiCard(
+                  nativeColor: Colors.blue,
+                ),
               ),
             ],
           ))
@@ -48,10 +58,10 @@ class _InputPageState extends State<InputPage> {
   }
 }
 
+
 class BmiCard extends StatelessWidget {
-  const BmiCard({
-    Key? key,
-  }) : super(key: key);
+  BmiCard({required this.nativeColor});
+  final Color nativeColor;
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +69,7 @@ class BmiCard extends StatelessWidget {
       margin: EdgeInsets.all(15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Colors.blue,
+        color: nativeColor,
         boxShadow: [
           BoxShadow(
             color: Colors.white.withOpacity(0.5),
