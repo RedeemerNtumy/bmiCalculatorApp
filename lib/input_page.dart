@@ -4,8 +4,6 @@ import 'bmiCard.dart';
 import 'Gender.dart';
 import 'const.dart';
 
-
-
 enum GenderType {
   male,
   female,
@@ -27,6 +25,7 @@ class _InputPageState extends State<InputPage> {
         ),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
             child: Row(
@@ -35,7 +34,7 @@ class _InputPageState extends State<InputPage> {
                   child: BmiCard(
                     gesture: () {
                       setState(() {
-                        selectedGender=GenderType.male;
+                        selectedGender = GenderType.male;
                       });
                     },
                     cardChild: Gender(
@@ -43,22 +42,22 @@ class _InputPageState extends State<InputPage> {
                       genderText: "MALE",
                     ),
                     nativeColor: selectedGender == GenderType.male
-                        ? activeReusableCardnativeColor
-                        : inactiveReusableCardNativeColor,
+                        ? kactiveReusableCardnativeColor
+                        : kinactiveReusableCardNativeColor,
                   ),
                 ),
                 Expanded(
                   child: BmiCard(
                     gesture: () {
                       setState(() {
-                        selectedGender=GenderType.female;
+                        selectedGender = GenderType.female;
                       });
                     },
                     cardChild: Gender(
                         gender: FontAwesomeIcons.venus, genderText: "FEMALE"),
                     nativeColor: selectedGender == GenderType.female
-                        ? activeReusableCardnativeColor
-                        : inactiveReusableCardNativeColor,
+                        ? kactiveReusableCardnativeColor
+                        : kinactiveReusableCardNativeColor,
                   ),
                 ),
               ],
@@ -66,12 +65,27 @@ class _InputPageState extends State<InputPage> {
           ),
           Expanded(
             child: BmiCard(
-              nativeColor: inactiveReusableCardNativeColor,
-              cardChild:Column(
+              nativeColor: kinactiveReusableCardNativeColor,
+              cardChild: Column(
                 children: [
-                  Text("HEIGHT")
+                  Text(
+                    "HEIGHT",
+                    style: klabelTextStyle,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        "y",
+                        style: kNumbers,
+                      ),
+                      Text(
+                        "CM",
+                        style: TextStyle(fontSize: 5),
+                      ),
+                    ],
+                  ),
                 ],
-              )
+              ),
             ),
           ),
           Expanded(
@@ -79,22 +93,22 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: BmiCard(
-                    nativeColor: inactiveReusableCardNativeColor,
+                    nativeColor: kinactiveReusableCardNativeColor,
                   ),
                 ),
                 Expanded(
                   child: BmiCard(
-                    nativeColor: inactiveReusableCardNativeColor,
+                    nativeColor: kinactiveReusableCardNativeColor,
                   ),
                 ),
               ],
             ),
           ),
           Container(
-            color: bottomContainerColor,
+            color: kbottomContainerColor,
             margin: EdgeInsets.only(top: 10),
             width: double.infinity,
-            height: bottomContainerHeight,
+            height: kbottomContainerHeight,
           )
         ],
       ),

@@ -17,7 +17,7 @@ class Gender extends StatelessWidget {
         SizedBox(
           height: 15,
         ),
-        Text(genderText, style: labelTextStyle)
+        Text(genderText, style: klabelTextStyle)
       ],
     );
   }
