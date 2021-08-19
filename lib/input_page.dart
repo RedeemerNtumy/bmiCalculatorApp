@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'bmiCard.dart';
@@ -134,8 +136,26 @@ class _InputPageState extends State<InputPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            RoundButton(FontAwesomeIcons.minus),
-                            RoundButton(FontAwesomeIcons.plus),
+                            RoundButton(
+                              FontAwesomeIcons.minus,
+                              () {
+                                setState(
+                                  () {
+                                    weight--;
+                                  },
+                                );
+                              },
+                            ),
+                            RoundButton(
+                              FontAwesomeIcons.plus,
+                              () {
+                                setState(
+                                  () {
+                                    weight++;
+                                  },
+                                );
+                              },
+                            ),
                           ],
                         )
                       ],
@@ -159,8 +179,26 @@ class _InputPageState extends State<InputPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            RoundButton(FontAwesomeIcons.minus),
-                            RoundButton(FontAwesomeIcons.plus),
+                            RoundButton(
+                              FontAwesomeIcons.minus,
+                              () {
+                                setState(
+                                  () {
+                                    age--;
+                                  },
+                                );
+                              },
+                            ),
+                            RoundButton(
+                              FontAwesomeIcons.plus,
+                              () {
+                                setState(
+                                  () {
+                                    age++;
+                                  },
+                                );
+                              },
+                            ),
                           ],
                         )
                       ],
@@ -190,16 +228,17 @@ class _InputPageState extends State<InputPage> {
 }
 
 class RoundButton extends StatelessWidget {
-  RoundButton(this.icon);
+  RoundButton(this.icon, this.onPressed);
   final IconData icon;
+  final VoidCallback? onPressed;
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
-      onLongPress: () {},
+      onPressed: onPressed,
       child: Icon(icon),
-      elevation: 6,
+      elevation: 2,
       shape: CircleBorder(),
-      fillColor: Color(0x3f0062ff),
+      fillColor: Color(0x500062ff),
       constraints: BoxConstraints.tightFor(width: 56.0, height: 56.0),
     );
   }
