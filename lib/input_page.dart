@@ -67,20 +67,24 @@ class _InputPageState extends State<InputPage> {
             child: BmiCard(
               nativeColor: kinactiveReusableCardNativeColor,
               cardChild: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     "HEIGHT",
                     style: klabelTextStyle,
                   ),
                   Row(
+                    textBaseline: TextBaseline.alphabetic,
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "y",
+                        "190",
                         style: kNumbers,
                       ),
                       Text(
                         "CM",
-                        style: TextStyle(fontSize: 5),
+                        style: klabelTextStyle,
                       ),
                     ],
                   ),
