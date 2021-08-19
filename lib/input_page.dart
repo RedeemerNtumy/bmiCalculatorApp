@@ -69,6 +69,11 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: BmiCard(
               nativeColor: inactiveReusableCardNativeColor,
+              cardChild:Column(
+                children: [
+                  Text("HEIGHT")
+                ],
+              )
             ),
           ),
           Expanded(
