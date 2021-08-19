@@ -130,6 +130,37 @@ class _InputPageState extends State<InputPage> {
                         Text(
                           weight.toString(),
                           style: kNumbers,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            FloatingActionButton(
+                              child: Icon(
+                                Icons.add,
+                                color: Colors.white,
+                                size: 40.0,
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  weight++;
+                                });
+                              },
+                              backgroundColor: Color(0x3f0062ff),
+                            ),
+                            FloatingActionButton(
+                              child: Icon(
+                                Icons.remove,
+                                color: Colors.white,
+                                size: 40.0,
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  weight--;
+                                });
+                              },
+                              backgroundColor: Color(0x3f0062ff),
+                            )
+                          ],
                         )
                       ],
                     ),
@@ -148,6 +179,37 @@ class _InputPageState extends State<InputPage> {
                         Text(
                           age.toString(),
                           style: kNumbers,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            FloatingActionButton(
+                              child: Icon(
+                                Icons.add,
+                                color: Colors.white,
+                                size: 40.0,
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  age++;
+                                });
+                              },
+                              backgroundColor: Color(0x3f0062ff),
+                            ),
+                            FloatingActionButton(
+                              child: Icon(
+                                Icons.remove,
+                                color: Colors.white,
+                                size: 40.0,
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  age--;
+                                });
+                              },
+                              backgroundColor: Color(0x3f0062ff),
+                            )
+                          ],
                         )
                       ],
                     ),
