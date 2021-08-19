@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'bmiCard.dart';
 import 'Gender.dart';
+import 'const.dart';
 
-const bottomContainerHeight = 80.0;
-const inactiveReusableCardNativeColor = Color(0xff1565C0);
-const activeReusableCardnativeColor = Colors.blue;
-const bottomContainerColor = Color(0xffEB1555);
+
 
 enum GenderType {
   male,
