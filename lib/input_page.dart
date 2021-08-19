@@ -134,32 +134,8 @@ class _InputPageState extends State<InputPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            FloatingActionButton(
-                              child: Icon(
-                                Icons.add,
-                                color: Colors.white,
-                                size: 40.0,
-                              ),
-                              onPressed: () {
-                                setState(() {
-                                  weight++;
-                                });
-                              },
-                              backgroundColor: Color(0x3f0062ff),
-                            ),
-                            FloatingActionButton(
-                              child: Icon(
-                                Icons.remove,
-                                color: Colors.white,
-                                size: 40.0,
-                              ),
-                              onPressed: () {
-                                setState(() {
-                                  weight--;
-                                });
-                              },
-                              backgroundColor: Color(0x3f0062ff),
-                            )
+                            RoundButton(FontAwesomeIcons.minus),
+                            RoundButton(FontAwesomeIcons.plus),
                           ],
                         )
                       ],
@@ -183,32 +159,8 @@ class _InputPageState extends State<InputPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            FloatingActionButton(
-                              child: Icon(
-                                Icons.add,
-                                color: Colors.white,
-                                size: 40.0,
-                              ),
-                              onPressed: () {
-                                setState(() {
-                                  age++;
-                                });
-                              },
-                              backgroundColor: Color(0x3f0062ff),
-                            ),
-                            FloatingActionButton(
-                              child: Icon(
-                                Icons.remove,
-                                color: Colors.white,
-                                size: 40.0,
-                              ),
-                              onPressed: () {
-                                setState(() {
-                                  age--;
-                                });
-                              },
-                              backgroundColor: Color(0x3f0062ff),
-                            )
+                            RoundButton(FontAwesomeIcons.minus),
+                            RoundButton(FontAwesomeIcons.plus),
                           ],
                         )
                       ],
@@ -233,6 +185,22 @@ class _InputPageState extends State<InputPage> {
           )
         ],
       ),
+    );
+  }
+}
+
+class RoundButton extends StatelessWidget {
+  RoundButton(this.icon);
+  final IconData icon;
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      onLongPress: () {},
+      child: Icon(icon),
+      elevation: 6,
+      shape: CircleBorder(),
+      fillColor: Color(0x3f0062ff),
+      constraints: BoxConstraints.tightFor(width: 56.0, height: 56.0),
     );
   }
 }
