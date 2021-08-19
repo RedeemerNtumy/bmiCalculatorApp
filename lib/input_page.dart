@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'bmiCard.dart';
@@ -137,8 +135,8 @@ class _InputPageState extends State<InputPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             RoundButton(
-                              FontAwesomeIcons.minus,
-                              () {
+                              icon: FontAwesomeIcons.minus,
+                              onPressed: () {
                                 setState(
                                   () {
                                     weight--;
@@ -147,8 +145,8 @@ class _InputPageState extends State<InputPage> {
                               },
                             ),
                             RoundButton(
-                              FontAwesomeIcons.plus,
-                              () {
+                              icon: FontAwesomeIcons.plus,
+                              onPressed: () {
                                 setState(
                                   () {
                                     weight++;
@@ -180,8 +178,8 @@ class _InputPageState extends State<InputPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             RoundButton(
-                              FontAwesomeIcons.minus,
-                              () {
+                              icon: FontAwesomeIcons.minus,
+                              onPressed: () {
                                 setState(
                                   () {
                                     age--;
@@ -190,8 +188,8 @@ class _InputPageState extends State<InputPage> {
                               },
                             ),
                             RoundButton(
-                              FontAwesomeIcons.plus,
-                              () {
+                              icon: FontAwesomeIcons.plus,
+                              onPressed: () {
                                 setState(
                                   () {
                                     age++;
@@ -228,7 +226,7 @@ class _InputPageState extends State<InputPage> {
 }
 
 class RoundButton extends StatelessWidget {
-  RoundButton(this.icon, this.onPressed);
+  RoundButton({required this.icon, required this.onPressed});
   final IconData icon;
   final VoidCallback? onPressed;
   @override
