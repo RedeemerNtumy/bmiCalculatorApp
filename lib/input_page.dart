@@ -1,3 +1,4 @@
+import 'package:bmi/results.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'bmiCard.dart';
@@ -209,9 +210,14 @@ class _InputPageState extends State<InputPage> {
           ),
           Container(
             child: Center(
-              child: Text(
-                "CALCULATE",
-                style: TextStyle(fontWeight: FontWeight.w900, fontSize: 40),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, "/result");
+                },
+                child: Text(
+                  "CALCULATE",
+                  style: TextStyle(fontWeight: FontWeight.w900, fontSize: 40),
+                ),
               ),
             ),
             color: kbottomContainerColor,
