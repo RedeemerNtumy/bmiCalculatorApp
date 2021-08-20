@@ -1,4 +1,3 @@
-import 'package:bmi/results.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'bmiCard.dart';
@@ -69,7 +68,7 @@ class _InputPageState extends State<InputPage> {
           ),
           Expanded(
             child: BmiCard(
-              nativeColor: kinactiveReusableCardNativeColor,
+              nativeColor: kactiveReusableCardnativeColor,
               cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -98,7 +97,7 @@ class _InputPageState extends State<InputPage> {
                       overlayShape: RoundSliderOverlayShape(overlayRadius: 30),
                       thumbColor: kbottomContainerColor,
                       activeTrackColor: Colors.white,
-                      inactiveTickMarkColor: Colors.white60,
+                      inactiveTickMarkColor: Colors.white38,
                       overlayColor: Color(0x29eB1555),
                     ),
                     child: Slider(
@@ -159,7 +158,7 @@ class _InputPageState extends State<InputPage> {
                         )
                       ],
                     ),
-                    nativeColor: kinactiveReusableCardNativeColor,
+                    nativeColor: kactiveReusableCardnativeColor,
                   ),
                 ),
                 Expanded(
@@ -202,7 +201,7 @@ class _InputPageState extends State<InputPage> {
                         )
                       ],
                     ),
-                    nativeColor: kinactiveReusableCardNativeColor,
+                    nativeColor: kactiveReusableCardnativeColor,
                   ),
                 ),
               ],
@@ -216,7 +215,7 @@ class _InputPageState extends State<InputPage> {
                 },
                 child: Text(
                   "CALCULATE",
-                  style: TextStyle(fontWeight: FontWeight.w900, fontSize: 40),
+                  style: kbaseButton,
                 ),
               ),
             ),
