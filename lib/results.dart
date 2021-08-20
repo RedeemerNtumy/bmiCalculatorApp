@@ -12,6 +12,7 @@ class Result extends StatelessWidget {
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
             child: Text(
@@ -22,7 +23,28 @@ class Result extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: BmiCard(nativeColor: kactiveReusableCardnativeColor),
+            child: BmiCard(
+              nativeColor: kactiveReusableCardnativeColor,
+              cardChild: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "Normal",
+                    style: kresultTextStyle,
+                  ),
+                  Text(
+                    "56",
+                    style: kbmitext,
+                  ),
+                  Text(
+                    "Your BMI is low the nhsdsh hsbshbs hsdhshsh hsshhs hsshbshbsh hshsh",
+                    textAlign: TextAlign.center,
+                    style: kbmiDescription,
+                  )
+                ],
+              ),
+            ),
             flex: 5,
           ),
           Container(
