@@ -1,6 +1,9 @@
 import 'package:bmi/const.dart';
 import 'package:flutter/material.dart';
 import 'bmiCard.dart';
+import 'bmiBrain.dart';
+
+
 
 class Result extends StatelessWidget {
   @override
@@ -15,16 +18,20 @@ class Result extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
-            child: Text(
-              "Your Result",
-              style: kbaseButton.copyWith(
-                fontSize: 50,
+            child: Container(
+              padding: EdgeInsets.all(20),
+              alignment: Alignment.bottomLeft,
+              child: Text(
+                "Your Result",
+                style: kbaseButton.copyWith(
+                  fontSize: 50,
+                ),
               ),
             ),
           ),
           Expanded(
             child: BmiCard(
-              nativeColor: kactiveReusableCardnativeColor,
+              nativeColor: kinactiveReusableCardNativeColor,
               cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
