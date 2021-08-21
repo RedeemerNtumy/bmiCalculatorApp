@@ -2,10 +2,10 @@ import 'dart:math';
 
 class Brain {
   Brain({required this.height, required this.weight});
-  late int height;
-  late int weight;
+  final int height;
+  final int weight;
 
-  late double _bmi;
+  double _bmi = 0.0;
 
   String bmiBrain() {
     double _bmi = weight / pow(height / 100, 2);

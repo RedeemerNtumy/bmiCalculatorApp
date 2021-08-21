@@ -1,11 +1,16 @@
 import 'package:bmi/const.dart';
 import 'package:flutter/material.dart';
 import 'bmiCard.dart';
-import 'bmiBrain.dart';
-
 
 
 class Result extends StatelessWidget {
+  Result(
+      {required this.bmiResult,
+      required this.resultText,
+      required this.interpretation});
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,15 +42,15 @@ class Result extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    "Normal",
+                    resultText.toUpperCase(),
                     style: kresultTextStyle,
                   ),
                   Text(
-                    "56",
+                   bmiResult,
                     style: kbmitext,
                   ),
                   Text(
-                    "Your BMI is low the nhsdsh hsbshbs hsdhshsh hsshhs hsshbshbsh hshsh",
+                   interpretation,
                     textAlign: TextAlign.center,
                     style: kbmiDescription,
                   )
