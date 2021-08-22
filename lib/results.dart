@@ -2,7 +2,6 @@ import 'package:bmi/const.dart';
 import 'package:flutter/material.dart';
 import 'bmiCard.dart';
 
-
 class Result extends StatelessWidget {
   Result(
       {required this.bmiResult,
@@ -46,11 +45,11 @@ class Result extends StatelessWidget {
                     style: kresultTextStyle,
                   ),
                   Text(
-                   bmiResult,
+                    bmiResult,
                     style: kbmitext,
                   ),
                   Text(
-                   interpretation,
+                    interpretation,
                     textAlign: TextAlign.center,
                     style: kbmiDescription,
                   )

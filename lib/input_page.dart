@@ -224,6 +224,9 @@ class _InputPageState extends State<InputPage> {
                       ),
                     ),
                   );
+                  print(works.bmiBrain());
+                  print(works.results());
+                  print(works.interpret());
                 },
                 child: Text(
                   "CALCULATE",
